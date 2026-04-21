@@ -1,0 +1,214 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@300;400;500;700&family=Noto+Sans:wght@300;400;500;700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ============================================================
+   CSS Custom Properties — Backward compatibility & runtime theming
+   ============================================================ */
+@layer base {
+  :root {
+    /* Point Color */
+    --pc-100: #ECF1F9;
+    --pc-200: #CCE2FF;
+    --pc-300: #B8D7FF;
+    --pc-400: #8FBFFF;
+    --pc-500: #6BABFF;
+    --pc-600: #57A0FF;
+    --pc-700: #3D91FF;
+    --pc-800: #0A74FF;
+    --pc-900: #0056C7;
+    --pc-1000: #1E4B85;
+
+    /* Basic Color */
+    --bc-100: #E8EBF2;
+    --bc-200: #D2D6E0;
+    --bc-300: #C6CCD7;
+    --bc-400: #B1B7C4;
+    --bc-500: #A1A7B5;
+    --bc-600: #8F96A3;
+    --bc-700: #747A86;
+    --bc-800: #51555D;
+    --bc-900: #3D4148;
+    --bc-1000: #17191C;
+
+    --color-white: #FFFFFF;
+    --color-black: #000000;
+
+    /* On Surface */
+    --lb-100: #FCFCFD;
+    --lb-200: #F9FAFB;
+    --lb-300: #EEF1F6;
+    --pb-150: #A0A9BA;
+    --db-100: #393C41;
+    --db-200: #26282C;
+
+    /* Theme */
+    --r-100: #FEE1E1; --r-200: #EF5D5D; --r-300: #D84141;
+    --b-100: #E5F8FF; --b-200: #2EC7FF; --b-300: #00ABF5;
+    --y-100: #FFF2D1; --y-200: #FFBB00; --y-300: #DD7F13;
+    --g-100: #E0FAE9; --g-200: #59E387; --g-300: #26A138;
+
+    /* Legend */
+    --pp-100: #F7F0FF; --pp-200: #9747FF; --pp-300: #6C10E5;
+    --pb-100: #EBEFFF; --pb-200: #4D76FF; --pb-300: #214BD4;
+    --p-100: #FCD9EE;  --p-200: #EF4EAE; --p-300: #C20F7B;
+
+    /* Semantic aliases */
+    --color-primary:          var(--pc-800);
+    --color-primary-hover:    var(--pc-700);
+    --color-primary-active:   var(--pc-900);
+    --color-primary-disabled: var(--pc-300);
+
+    --color-text-primary:   var(--bc-1000);
+    --color-text-secondary: var(--bc-500);
+    --color-text-tertiary:  var(--bc-300);
+    --color-text-disabled:  var(--bc-300);
+    --color-text-inverse:   var(--color-white);
+
+    --color-bg-base:    var(--lb-100);
+    --color-bg-elevated: var(--lb-200);
+    --color-bg-footer:  var(--lb-300);
+
+    --color-border-light:   var(--bc-100);
+    --color-border-default: var(--bc-200);
+    --color-border-strong:  var(--bc-300);
+    --color-border-input:   var(--bc-300);
+
+    --color-error:      var(--r-200);
+    --color-error-bg:   var(--r-100);
+    --color-warning:    var(--y-200);
+    --color-warning-bg: var(--y-100);
+    --color-success:    var(--g-300);
+    --color-success-bg: var(--g-100);
+    --color-info:       var(--b-300);
+    --color-info-bg:    var(--b-100);
+
+    --font-family-base: 'Noto Sans KR', sans-serif;
+    --font-weight-light:   300;
+    --font-weight-regular: 400;
+    --font-weight-medium:  500;
+    --font-weight-bold:    700;
+  }
+
+  html {
+    font-family: var(--font-family-base);
+    color: var(--bc-1000);
+    background-color: var(--lb-100);
+    -webkit-font-smoothing: antialiased;
+  }
+}
+
+/* ============================================================
+   Typography Classes — .text-{size}-{weight} / .link-{size}-{weight}
+   ============================================================ */
+@layer components {
+  /* 54px */
+  .text-54-light   { font-size: 54px; font-weight: 300; line-height: 82px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+  .text-54-regular { font-size: 54px; font-weight: 400; line-height: 82px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+  .text-54-medium  { font-size: 54px; font-weight: 500; line-height: 82px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+  .text-54-bold    { font-size: 54px; font-weight: 700; line-height: 82px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+
+  /* 48px */
+  .text-48-light   { font-size: 48px; font-weight: 300; line-height: 72px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+  .text-48-regular { font-size: 48px; font-weight: 400; line-height: 72px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+  .text-48-medium  { font-size: 48px; font-weight: 500; line-height: 72px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+  .text-48-bold    { font-size: 48px; font-weight: 700; line-height: 72px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+
+  /* 42px */
+  .text-42-light   { font-size: 42px; font-weight: 300; line-height: 64px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+  .text-42-regular { font-size: 42px; font-weight: 400; line-height: 64px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+  .text-42-medium  { font-size: 42px; font-weight: 500; line-height: 64px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+  .text-42-bold    { font-size: 42px; font-weight: 700; line-height: 64px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+
+  /* 36px */
+  .text-36-light   { font-size: 36px; font-weight: 300; line-height: 54px; letter-spacing: -0.45px; font-family: var(--font-family-base); }
+  .text-36-regular { font-size: 36px; font-weight: 400; line-height: 54px; letter-spacing: -0.45px; font-family: var(--font-family-base); }
+  .text-36-medium  { font-size: 36px; font-weight: 500; line-height: 54px; letter-spacing: -1.26px; font-family: var(--font-family-base); } /* 예외 */
+  .text-36-bold    { font-size: 36px; font-weight: 700; line-height: 54px; letter-spacing: -0.5px;  font-family: var(--font-family-base); }
+
+  /* 32px */
+  .text-32-light   { font-size: 32px; font-weight: 300; line-height: 48px; letter-spacing: -0.45px; font-family: var(--font-family-base); }
+  .text-32-regular { font-size: 32px; font-weight: 400; line-height: 48px; letter-spacing: -0.45px; font-family: var(--font-family-base); }
+  .text-32-medium  { font-size: 32px; font-weight: 500; line-height: 48px; letter-spacing: -0.45px; font-family: var(--font-family-base); }
+  .text-32-bold    { font-size: 32px; font-weight: 700; line-height: 48px; letter-spacing: -0.45px; font-family: var(--font-family-base); }
+
+  /* 28px */
+  .text-28-light   { font-size: 28px; font-weight: 300; line-height: 42px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+  .text-28-regular { font-size: 28px; font-weight: 400; line-height: 42px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+  .text-28-medium  { font-size: 28px; font-weight: 500; line-height: 42px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+  .text-28-bold    { font-size: 28px; font-weight: 700; line-height: 42px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+
+  /* 24px */
+  .text-24-light   { font-size: 24px; font-weight: 300; line-height: 36px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+  .text-24-regular { font-size: 24px; font-weight: 400; line-height: 36px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+  .text-24-medium  { font-size: 24px; font-weight: 500; line-height: 36px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+  .text-24-bold    { font-size: 24px; font-weight: 700; line-height: 36px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+
+  /* 20px */
+  .text-20-light   { font-size: 20px; font-weight: 300; line-height: 30px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+  .text-20-regular { font-size: 20px; font-weight: 400; line-height: 30px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+  .text-20-medium  { font-size: 20px; font-weight: 500; line-height: 30px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+  .text-20-bold    { font-size: 20px; font-weight: 700; line-height: 30px; letter-spacing: -0.43px; font-family: var(--font-family-base); }
+
+  /* 18px */
+  .text-18-light   { font-size: 18px; font-weight: 300; line-height: 28px; letter-spacing: -0.4px;  font-family: var(--font-family-base); }
+  .text-18-regular { font-size: 18px; font-weight: 400; line-height: 28px; letter-spacing: -0.4px;  font-family: var(--font-family-base); }
+  .text-18-medium  { font-size: 18px; font-weight: 500; line-height: 28px; letter-spacing: -0.4px;  font-family: var(--font-family-base); }
+  .text-18-bold    { font-size: 18px; font-weight: 700; line-height: 28px; letter-spacing: -0.4px;  font-family: var(--font-family-base); }
+
+  /* 16px */
+  .text-16-light   { font-size: 16px; font-weight: 300; line-height: 24px; letter-spacing: -0.35px; font-family: var(--font-family-base); }
+  .text-16-regular { font-size: 16px; font-weight: 400; line-height: 24px; letter-spacing: -0.35px; font-family: var(--font-family-base); }
+  .text-16-medium  { font-size: 16px; font-weight: 500; line-height: 24px; letter-spacing: -0.35px; font-family: var(--font-family-base); }
+  .text-16-bold    { font-size: 16px; font-weight: 700; line-height: 24px; letter-spacing: -0.35px; font-family: var(--font-family-base); }
+
+  /* 14px */
+  .text-14-light   { font-size: 14px; font-weight: 300; line-height: 22px; letter-spacing: -0.3px;  font-family: var(--font-family-base); }
+  .text-14-regular { font-size: 14px; font-weight: 400; line-height: 22px; letter-spacing: -0.3px;  font-family: var(--font-family-base); }
+  .text-14-medium  { font-size: 14px; font-weight: 500; line-height: 22px; letter-spacing: -0.3px;  font-family: var(--font-family-base); }
+  .text-14-bold    { font-size: 14px; font-weight: 700; line-height: 22px; letter-spacing: -0.3px;  font-family: var(--font-family-base); }
+
+  /* 12px */
+  .text-12-light   { font-size: 12px; font-weight: 300; line-height: 18px; letter-spacing: -0.26px; font-family: var(--font-family-base); }
+  .text-12-regular { font-size: 12px; font-weight: 400; line-height: 18px; letter-spacing: -0.26px; font-family: var(--font-family-base); }
+  .text-12-medium  { font-size: 12px; font-weight: 500; line-height: 18px; letter-spacing: -0.26px; font-family: var(--font-family-base); }
+  .text-12-bold    { font-size: 12px; font-weight: 700; line-height: 18px; letter-spacing: -0.26px; font-family: var(--font-family-base); }
+
+  /* 11px */
+  .text-11-light   { font-size: 11px; font-weight: 300; line-height: 18px; letter-spacing: -0.26px; font-family: var(--font-family-base); }
+  .text-11-regular { font-size: 11px; font-weight: 400; line-height: 18px; letter-spacing: -0.26px; font-family: var(--font-family-base); }
+  .text-11-medium  { font-size: 11px; font-weight: 500; line-height: 18px; letter-spacing: -0.26px; font-family: var(--font-family-base); }
+  .text-11-bold    { font-size: 11px; font-weight: 700; line-height: 18px; letter-spacing: -0.26px; font-family: var(--font-family-base); }
+
+  /* Link variants (underline) */
+  .link-24-light   { @apply text-24-light   underline; }
+  .link-24-regular { @apply text-24-regular underline; }
+  .link-24-medium  { @apply text-24-medium  underline; }
+  .link-24-bold    { @apply text-24-bold    underline; }
+  .link-20-light   { @apply text-20-light   underline; }
+  .link-20-regular { @apply text-20-regular underline; }
+  .link-20-medium  { @apply text-20-medium  underline; }
+  .link-20-bold    { @apply text-20-bold    underline; }
+  .link-18-light   { @apply text-18-light   underline; }
+  .link-18-regular { @apply text-18-regular underline; }
+  .link-18-medium  { @apply text-18-medium  underline; }
+  .link-18-bold    { @apply text-18-bold    underline; }
+  .link-16-light   { @apply text-16-light   underline; }
+  .link-16-regular { @apply text-16-regular underline; }
+  .link-16-medium  { @apply text-16-medium  underline; }
+  .link-16-bold    { @apply text-16-bold    underline; }
+  .link-14-light   { @apply text-14-light   underline; }
+  .link-14-regular { @apply text-14-regular underline; }
+  .link-14-medium  { @apply text-14-medium  underline; }
+  .link-14-bold    { @apply text-14-bold    underline; }
+  .link-12-light   { @apply text-12-light   underline; }
+  .link-12-regular { @apply text-12-regular underline; }
+  .link-12-medium  { @apply text-12-medium  underline; }
+  .link-12-bold    { @apply text-12-bold    underline; }
+  .link-11-light   { @apply text-11-light   underline; }
+  .link-11-regular { @apply text-11-regular underline; }
+  .link-11-medium  { @apply text-11-medium  underline; }
+  .link-11-bold    { @apply text-11-bold    underline; }
+}
